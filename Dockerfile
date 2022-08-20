@@ -26,5 +26,3 @@ RUN pip install email_validator
 # Start the flask environment by setting our
 # closing command to gunicorn app:app
 CMD gunicorn app:app
-
-#Token: e9872bf2-f8b7-4b85-9c9e-5f138cff4d15
