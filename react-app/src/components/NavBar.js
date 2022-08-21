@@ -2,11 +2,25 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import styled from 'styled-components';
+
+const StyledNav = styled.nav`
+width: 100vw;
+`
+const StyledUL = styled.ul`
+display: flex;
+flex-direction: row;
+justify-content: right;
+list-style: none;
+&& li {
+  margin: 10px 40px;
+}
+`
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul>
+    <StyledNav>
+      <StyledUL>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
@@ -23,15 +37,10 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-        <li>
           <LogoutButton />
         </li>
-      </ul>
-    </nav>
+      </StyledUL>
+    </StyledNav>
   );
 }
 
