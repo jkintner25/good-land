@@ -11,9 +11,10 @@ const Headline = styled.div`
 	position: absolute;
 	display: flex;
 	flex-direction: column;
+	top: 124px;
 	justify-content: center;
-	width: auto;
-	height: 100%;
+	width: 1000px;
+	height: 561.88px;
 	margin: 0 0 0 8px;
 	padding: 0;
 	overflow: visible;
@@ -21,7 +22,7 @@ const Headline = styled.div`
 		white-space: nowrap;
 		width: 100%;
 		color: white;
-		font-size: 72px;
+		font-size: 122px;
 		text-align: start;
 		text-shadow:
 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 4px 4px #f5cb5c;
