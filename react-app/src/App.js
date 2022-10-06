@@ -8,21 +8,23 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import User from './components/User';
 import { authenticate } from './store/session';
 import SplashPage from './components/Splash/SplashPage';
+import Beans from './components/Beans/Beans';
+import About from './components/About/About';
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
-  const dispatch = useDispatch();
+  // const [loaded, setLoaded] = useState(false);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    (async () => {
-      await dispatch(authenticate());
-      setLoaded(true);
-    })();
-  }, [dispatch]);
+  // useEffect(() => {
+  //   (async () => {
+  //     await dispatch(authenticate());
+  //     setLoaded(true);
+  //   })();
+  // }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
+  // if (!loaded) {
+  //   return null;
+  // }
 
   return (
     <BrowserRouter>
@@ -32,15 +34,15 @@ function App() {
           <Route path='/' exact={true}>
             <SplashPage />
           </Route>
-          <Route path='/login' exact={true}>
-            <LoginForm />
+          <Route path='/beans' exact={true}>
+            <Beans />
           </Route>
-          <Route path='/sign-up' exact={true}>
-            <SignUpForm />
+          <Route path='/about' exact={true}>
+            <About />
           </Route>
-          <ProtectedRoute path='/users/:userId' exact={true} >
+          {/* <ProtectedRoute path='/users/:userId' exact={true} >
             <User />
-          </ProtectedRoute>
+          </ProtectedRoute> */}
         </Switch>
       </div>
     </BrowserRouter>
