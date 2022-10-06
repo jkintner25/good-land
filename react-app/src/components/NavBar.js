@@ -36,6 +36,7 @@ const NavDiv = styled.div`
 const GoodLandH2 = styled.h2`
   margin: 0;
   padding: 0 0 0 20px;
+  cursor: default;
   font-family: 'Lobster Two', cursive;
   font-size: 52px;
   text-shadow:

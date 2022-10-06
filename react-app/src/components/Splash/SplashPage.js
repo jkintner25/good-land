@@ -22,6 +22,7 @@ const Headline = styled.div`
 		white-space: nowrap;
 		width: 100%;
 		color: white;
+		cursor: default;
 		font-size: 122px;
 		text-align: start;
 		text-shadow:

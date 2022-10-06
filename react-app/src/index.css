@@ -12,8 +12,7 @@ body {
 }
 
 .main {
-    max-width: 1200px;
-    width: auto;
+    width: 1000px;
     height: auto;
     position: relative;
     display: flex;
