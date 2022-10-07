@@ -1,7 +1,7 @@
 /* TODO Add site wide styles */
 body {
     width: 98vw;
-    height: auto;
+    height: 97.8vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ body {
 
 .main {
     width: 1000px;
-    height: auto;
+    height: 98.9vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,4 +22,44 @@ body {
 h1 {
     margin: 0;
     padding: 0;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0;
+    height: 30px;
+    width: auto;
+    margin: 8px;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.nav-links a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #f5cb5c;
+    height: 2px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.nav-links a:hover:before,
+.nav-links a:focus:before,
+.nav-links a:active:before {
+    right: 0;
 }

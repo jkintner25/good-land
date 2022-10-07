@@ -12,8 +12,8 @@ const Headline = styled.div`
 	display: flex;
 	flex-direction: column;
 	top: 124px;
-	justify-content: center;
-	width: 1000px;
+	align-items: center;
+	width: 984px;
 	height: 561.88px;
 	margin: 0 0 0 8px;
 	padding: 0;
@@ -21,12 +21,24 @@ const Headline = styled.div`
 	& h1 {
 		white-space: nowrap;
 		width: 100%;
+		height: 100%;
+		padding: 200px 0 0 0;
 		color: white;
 		cursor: default;
-		font-size: 122px;
+		font-size: 80px;
+		text-align: center;
+		text-shadow:
+		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 3px 3px #f5cb5c;
+	}
+	& h3 {
+		white-space: nowrap;
+		width: 80%;
+		color: white;
+		cursor: default;
+		font-size: 30px;
 		text-align: start;
 		text-shadow:
-		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 4px 4px #f5cb5c;
+		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 1.5px 1.5px #f5cb5c;
 	}
 `
 
@@ -36,8 +48,8 @@ function SplashPage() {
 		<>
 			<CoffeeBeansImage src={beans} alt="" />
 			<Headline>
-				<h1>Ethically Sourced</h1>
-				<h1>Locally Roasted</h1>
+				<h1>From our home to yours.</h1>
+				<h3>Birmingham, &nbsp; AL</h3>
 			</Headline>
 		</>
 	);

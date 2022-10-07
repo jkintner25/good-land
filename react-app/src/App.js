@@ -10,6 +10,8 @@ import { authenticate } from './store/session';
 import SplashPage from './components/Splash/SplashPage';
 import Beans from './components/Beans/Beans';
 import About from './components/About/About';
+import NewBeansForm from './components/Beans/NewBeansForm';
+import Footer from './components/Footer/Footer';
 
 function App() {
   // const [loaded, setLoaded] = useState(false);
@@ -40,10 +42,14 @@ function App() {
           <Route path='/about' exact={true}>
             <About />
           </Route>
+          <Route path='/new-beans'>
+            <NewBeansForm />
+          </Route>
           {/* <ProtectedRoute path='/users/:userId' exact={true} >
             <User />
           </ProtectedRoute> */}
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

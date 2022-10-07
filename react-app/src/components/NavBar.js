@@ -15,11 +15,6 @@ const StyledUL = styled.ul`
   && li {
     margin: 0 20px;
   }
-  && a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-  }
 `
 const NavDiv = styled.div`
   padding: 0;
@@ -50,7 +45,7 @@ const NavBar = () => {
         <GoodLandH2>Good Land Coffee Roasters</GoodLandH2>
       </div>
       <StyledNav>
-        <StyledUL>
+        <StyledUL className='nav-links'>
           <li>
             <NavLink to='/' exact={true} activeClassName='active'>
               Home
