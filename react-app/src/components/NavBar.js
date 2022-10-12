@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import cart from '../images/cart.png'
 
 const StyledNav = styled.nav`
   width: fit-content;
@@ -13,7 +14,7 @@ const StyledUL = styled.ul`
   padding: 0;
   list-style: none;
   && li {
-    margin: 0 20px;
+    margin: 0 16px;
   }
 `
 const NavDiv = styled.div`
@@ -37,6 +38,10 @@ const GoodLandH2 = styled.h2`
   text-shadow:
 		-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 4px 4px #f5cb5c;
 `
+const CartImg = styled.img`
+  height: 20px;
+  width: 20px;
+`
 
 const NavBar = () => {
   return (
@@ -52,13 +57,18 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to='/about' exact={true} activeClassName='active'>
+              About
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/beans' exact={true} activeClassName='active'>
               Beans
             </NavLink>
           </li>
           <li>
-            <NavLink to='/about' exact={true} activeClassName='active'>
-              About
+            <NavLink to='/cart' exact={true}>
+              <CartImg src={cart} />
             </NavLink>
           </li>
         </StyledUL>

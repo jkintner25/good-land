@@ -1,32 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import User from './components/User';
-import { authenticate } from './store/session';
 import SplashPage from './components/Splash/SplashPage';
 import Beans from './components/Beans/Beans';
 import About from './components/About/About';
 import NewBeansForm from './components/Beans/NewBeansForm';
 import Footer from './components/Footer/Footer';
+import { readProducts } from './store/product';
 
 function App() {
-  // const [loaded, setLoaded] = useState(false);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   (async () => {
-  //     await dispatch(authenticate());
-  //     setLoaded(true);
-  //   })();
-  // }, [dispatch]);
-
-  // if (!loaded) {
-  //   return null;
-  // }
+  useEffect(() => {
+    dispatch(readProducts())
+  }, [])
 
   return (
     <BrowserRouter>
@@ -45,9 +33,6 @@ function App() {
           <Route path='/new-beans'>
             <NewBeansForm />
           </Route>
-          {/* <ProtectedRoute path='/users/:userId' exact={true} >
-            <User />
-          </ProtectedRoute> */}
         </Switch>
         <Footer />
       </div>

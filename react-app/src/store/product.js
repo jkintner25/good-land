@@ -25,25 +25,6 @@ const remove = payload => ({
 
 export const createProduct = ({ name, description, size, price }) => async dispatch => {
 
-  // const imageData = new FormData();
-  // imageData.append("image", image);
-
-  // const imageRes = await fetch(`/api/images/`, {
-  //   method: "POST",
-  //   body: imageData,
-  // });
-
-  // if (imageRes.ok) {
-  //   image = await imageRes.json();
-  // } else if (imageRes.status < 500) {
-  //   const data = await imageRes.json();
-  //   if (data.errors) {
-  //     return [data.errors];
-  //   }
-  // } else {
-  //   return ["An error occurred. Please try again."];
-  // }
-
   const response = await fetch("/api/products/", {
     method: "POST",
     headers: {
@@ -71,6 +52,16 @@ export const createProduct = ({ name, description, size, price }) => async dispa
   }
 }
 
+export const readProducts = () => async dispatch => {
+  const response = await fetch("/api/products/")
+  const data = await response.json();
+  if (response.ok) {
+    dispatch(read(data));
+  } else {
+    return data;
+  }
+};
+
 const initialState = {};
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -82,7 +73,7 @@ export default function reducer(state = initialState, { type, payload }) {
     }
     case READ_PRODUCT: {
       const newState = {}
-      payload.products.foreach(product => {
+      payload.products.forEach(product => {
         newState[product.id] = product
       })
       return newState;

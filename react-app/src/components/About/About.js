@@ -11,7 +11,7 @@ const MainRow = styled.div`
   margin: 0 0 0 40px;
 `
 
-const Column = styled.div`
+export const Column = styled.div`
   justify-content: center;
   align-items: center;
   & p {
@@ -30,6 +30,7 @@ const Column = styled.div`
 const Headshot = styled.img`
   height: 700px;
   width: auto;
+  border-radius: 40px;
 `
 
 function About() {

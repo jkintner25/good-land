@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import beans from '../../images/beans.jpg'
 
+const Main = styled.div`
+	height: 100%;
+`
+
 const CoffeeBeansImage = styled.img`
   max-width: 1000px;
   height: auto;
@@ -45,13 +49,13 @@ const Headline = styled.div`
 function SplashPage() {
 
 	return (
-		<>
+		<Main>
 			<CoffeeBeansImage src={beans} alt="" />
 			<Headline>
 				<h1>From our home to yours.</h1>
 				<h3>Birmingham, &nbsp; AL</h3>
 			</Headline>
-		</>
+		</Main>
 	);
 };
 
